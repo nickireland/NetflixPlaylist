@@ -19,9 +19,16 @@ chrome.webNavigation.onCompleted.addListener(function(details){
         chrome.contextMenus.create({
             id: String(details.tabId),
             title: "Test Response",
-            documentUrlPatterns: ["*://*/*" ] //note: putting netflix here instead of all urls doesn't seem to work. Why?
+            documentUrlPatterns: ["http://www.netflix.com/*","https://www.netflix.com/*", "*://www.netflix.com/*"] //can't figure out which one of these makes it work so keeping all three. 
         });
     })
 }, {
     url: [{"hostContains": "netflix.com"}]
 });
+
+javascript:void(document.oncontextmenu=null);
+
+
+chrome.contextMenus.onClicked.addListener(function(){
+    alert("hello");
+})
