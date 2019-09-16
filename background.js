@@ -1,9 +1,11 @@
+//attempt 1: didn't work
 /*chrome.contextMenus.create({
     "id": "addToPlaylist",
     "title": "AddToPlaylist",
     "contexts": ['video'] 
 });*/
 
+//iteration 2: works
 /*chrome.webNavigation.onCompleted.addListener(function(details){
     chrome.tabs.executeScript(details.tabId, {
         file: "content_script.js"
@@ -30,5 +32,5 @@ javascript:void(document.oncontextmenu=null);
 
 
 chrome.contextMenus.onClicked.addListener(function(){
-    alert("hello");
+    document.querySelector("episodeTitle").innerText;
 })
