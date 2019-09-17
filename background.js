@@ -28,9 +28,12 @@ chrome.webNavigation.onCompleted.addListener(function(details){
     url: [{"hostContains": "netflix.com"}]
 });
 
-javascript:void(document.oncontextmenu=null);
-
 
 chrome.contextMenus.onClicked.addListener(function(){
-    document.querySelector("episodeTitle").innerText;
+    alert('anything');
+    //console.log('click');
+    //alert(document.getElementById('episodeArt').getElementsByTagName('a')[0].href);
+    alert(document.getElementById('episodeArt')); //this is returning null and is the problem
+    //i don't think this is occuring on the right page.....
+   //document.querySelector("episodeTitle").innerText;
 })
